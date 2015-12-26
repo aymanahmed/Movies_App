@@ -270,17 +270,17 @@ public class MovieDetailsFragment extends Fragment {
         @Override
         protected void onPostExecute(String[] strings) {
             Log.w(LOG_TAG, "on post execute");
-
-            reviewsAdapter = new ArrayAdapter<String>(getActivity(),R.layout.review_list_item,R.id.author_name ,mMovie.getReviewsAuthors());
-            reviewsListView.setAdapter(reviewsAdapter);
-            reviewsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(mMovie.getReviews()[position].getPath())));
-                }
-            });
-            Utilities.setDynamicHeight(reviewsListView);
-
+            if(mMovie.getReviewsAuthors() != null && getActivity() != null) {
+                reviewsAdapter = new ArrayAdapter<String>(getActivity(), R.layout.review_list_item, R.id.author_name, mMovie.getReviewsAuthors());
+                reviewsListView.setAdapter(reviewsAdapter);
+                reviewsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(mMovie.getReviews()[position].getPath())));
+                    }
+                });
+                Utilities.setDynamicHeight(reviewsListView);
+            }
 
         }
         protected String[] getTrailersFromJson(String moviesJsonStr)throws JSONException {
