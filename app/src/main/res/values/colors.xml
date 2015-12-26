@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="movies_header_font_color">#ffffff</color>
+    <color name="movies_header_color">#029789</color>
+    <color name="movies_favorite_button_color">#87e4db</color>
+    <color name="movies_font_color">#868686</color>
+    <color name="movies_black">#000</color>
+</resources>

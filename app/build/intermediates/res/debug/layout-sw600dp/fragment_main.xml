@@ -1,0 +1,17 @@
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/movies_grid"
+    android:numColumns="3"
+    android:background="@drawable/item_selector"
+    android:stretchMode="columnWidth"
+    tools:context=".MainActivityFragment"
+
+
+    />
+
+
+
+
+<!-- From: file:/D:/Movies/app/src/main/res/layout-sw600dp/fragment_main.xml -->
